@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weird Godflesh Album Name Generator</title>
+  <style>
+    h1 {
+      text-align: center;
+    }
+    button {
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Weird Godflesh Album Name Generator</h1>
+  <button id="generateButton">Generate Weird Album Name</button>
+  <div id="result"></div>
+
+  <script>
+    const albums = ["Streetcleaner", "Pure", "Hymns", "Post Self", "A World Lit Only by Fire", "Us and Them", "Selfless", "Songs of Love and Hate"];
+    const generateButton = document.getElementById("generateButton");
+    const resultDiv = document.getElementById("result");
+
+    generateButton.addEventListener("click", () => {
+      let randomName = "";
+      for (let i = 0; i < 3; i++) {
+        const randomAlbum = albums[Math.floor(Math.random() * albums.length)];
+        randomName += randomAlbum.substring(0, randomAlbum.length / 2);
+      }
+      resultDiv.innerText = randomName;
+    });
+  </script>
+  <br>
+  <center>created by <a href="dreamyky.carrd.co">dreamykyrin</a></center>
+</body>
+</html>
